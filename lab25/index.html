@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Demo - User Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin-bottom: 10px;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .status.online {
+            background: #4ade80;
+            color: #166534;
+        }
+        .status.offline {
+            background: #f87171;
+            color: #991b1b;
+        }
+        .content {
+            padding: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .users-list {
+            margin-top: 30px;
+        }
+        .users-list h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .user-item {
+            background: #f8fafc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        .user-item:hover {
+            background: #f1f5f9;
+            transform: translateX(5px);
+        }
+        .user-info {
+            flex: 1;
+        }
+        .user-name {
+            font-weight: 600;
+            color: #333;
+        }
+        .user-email {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .delete-btn {
+            background: #ef4444;
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+        .delete-btn:hover {
+            background: #dc2626;
+        }
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .success {
+            background: #dcfce7;
+            color: #166534;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 System Integration Demo</h1>
+            <p>Frontend ↔ Backend ↔ SQLite</p>
+            <div id="status" class="status offline">Перевірка з'єднання...</div>
+        </div>
+        <div class="content">
+            <div id="error" class="error"></div>
+            <div id="success" class="success"></div>
+            
+            <div class="form-group">
+                <label>👤 Ім'я</label>
+                <input type="text" id="name" placeholder="Введіть ім'я">
+            </div>
+            <div class="form-group">
+                <label>📧 Email</label>
+                <input type="email" id="email" placeholder="Введіть email">
+            </div>
+            <button onclick="addUser()">➕ Додати користувача</button>
+            
+            <div class="users-list">
+                <h2>📋 Список користувачів</h2>
+                <div id="usersContainer">
+                    <div class="loading">Завантаження...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

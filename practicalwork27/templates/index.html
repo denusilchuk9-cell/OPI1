@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome to MyWebApp</h2>
+<p>This is a secure web application built with Flask framework.</p>
+<p>Features include:</p>
+<ul>
+    <li>User registration and authentication</li>
+    <li>Secure password hashing with bcrypt</li>
+    <li>CSRF protection</li>
+    <li>XSS prevention</li>
+    <li>SQL injection protection</li>
+    <li>Session management</li>
+    <li>Post creation and management</li>
+</ul>
+{% if not session.user_id %}
+    <a href="{{ url_for('register') }}"><button>Get Started</button></a>
+{% endif %}
+{% endblock %}

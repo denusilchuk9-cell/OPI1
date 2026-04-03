@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<p>Welcome, {{ user.username }}!</p>
+
+<h3>Your Posts</h3>
+{% if posts %}
+    {% for post in posts %}
+        <div class="post">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content[:200] }}{% if post.content|length > 200 %}...{% endif %}</p>
+            <small>Posted on {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>You haven't created any posts yet.</p>
+    <a href="{{ url_for('create_post') }}"><button>Create First Post</button></a>
+{% endif %}
+{% endblock %}

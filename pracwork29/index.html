@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практичне заняття: HTML та CSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <nav class="site-nav">
+        <a class="logo" href="index.html">WebStart</a>
+        <ul class="nav-list">
+          <li><a class="active" href="index.html">Головна</a></li>
+          <li><a href="homework.html">Домашнє завдання</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Практичне заняття</p>
+          <h1>Створення простого веб-сайту HTML та CSS</h1>
+          <p class="lead">
+            Мета заняття: навчитися створювати структуру сторінки, додавати
+            контент, стилізувати елементи та адаптувати сайт для різних пристроїв.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#tasks">Переглянути завдання</a>
+            <a class="button secondary" href="homework.html">До домашнього</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="images/web-study.svg" alt="Ілюстрація з ноутбуком та елементами веб-дизайну">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Що ми вивчаємо</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>HTML</h3>
+            <p>Створення структури сторінки: заголовки, абзаци, списки, зображення та посилання.</p>
+          </article>
+          <article class="card">
+            <h3>CSS</h3>
+            <p>Оформлення сайту за допомогою кольорів, шрифтів, відступів, блоків та анімацій.</p>
+          </article>
+          <article class="card">
+            <h3>Responsive</h3>
+            <p>Адаптація макета під мобільні пристрої, планшети й настільні комп'ютери.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section accent" id="tasks">
+      <div class="container">
+        <h2>Основні завдання</h2>
+        <ol class="task-list">
+          <li>Створити HTML-документ з елементами <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> і <code>&lt;footer&gt;</code>.</li>
+          <li>Додати текст, зображення, посилання, заголовки, абзаци та списки.</li>
+          <li>Підключити зовнішній файл стилів та стилізувати елементи сторінки.</li>
+          <li>Оформити блоки за допомогою Flexbox і налаштувати відступи та розміри.</li>
+          <li>Зробити адаптивний дизайн для різних екранів.</li>
+          <li>Створити меню навігації та виділити активну сторінку.</li>
+          <li>Перевірити код, знайти й виправити можливі помилки.</li>
+          <li>Підготувати коротку презентацію з демонстрацією результату.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-column">
+        <div>
+          <h2>Приклади HTML-елементів</h2>
+          <p>
+            На цій сторінці використані різні теги: <strong>заголовки</strong>,
+            <em>абзаци</em>, списки, кнопки-посилання, зображення та блоки.
+          </p>
+          <ul class="check-list">
+            <li>Маркірований список для коротких пунктів</li>
+            <li>Нумерований список для послідовних кроків</li>
+            <li>Посилання на іншу сторінку сайту</li>
+          </ul>
+        </div>
+
+        <aside class="info-box">
+          <h3>Корисне посилання</h3>
+          <p>Для перевірки HTML можна використати офіційний валідатор W3C.</p>
+          <a class="text-link" href="https://validator.w3.org/" target="_blank" rel="noreferrer">Відкрити W3C Validator</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-layout">
+      <div>
+        <h3>Підсумок заняття</h3>
+        <p>Студенти створюють простий сайт, вчаться працювати з HTML, CSS та адаптивним дизайном.</p>
+      </div>
+      <div>
+        <h3>Контакти</h3>
+        <p>Email: study@example.com</p>
+        <p>Телефон: +380 00 000 00 00</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
